@@ -23,19 +23,19 @@ const _Div = styled.div(props => ({
   marginTop: props.mt ? props.mt : props.my && props.my,
   marginBottom: props.mb ? props.mb : props.my && props.my,
 
-  padding: props.p && props.p,
+  padding: props.p ? props.p : props.glass && 30,
   paddingLeft: props.pl ? props.pl : props.px && props.px,
   paddingRight: props.pr ? props.pr : props.px && props.px,
   paddingTop: props.pt ? props.pt : props.py && props.py,
   paddingBottom: props.pb ? props.pb : props.py && props.py,
 
-  display: (props.flex || !!props.align || !!props.justify || props.col || props.center || !!props.split) ? (props.iflex ? 'inline-flex' : 'flex') : 'block',
+  display: (props.flex || !!props.align || !!props.justify || props.col || props.center || !!props.split) ? (props.iflex ? 'inline-flex' : 'flex') : props.iblock ? 'inline-block' : 'block',
   justifyContent: props.center ? 'center' : props.justify === 'center' ? 'center' : props.justify === 'end' ? 'flex-end' : (props.justify === 'between' || props.split) ? 'space-between' : props.justify === 'evenly' ? 'space-evenly' : 'flex-start',
   alignItems: (props.split || props.center) ? 'center' : props.align === 'center' ? 'center' : props.align === 'end' ? 'flex-end' : props.align === 'stretch' ? 'stretch' : 'flex-start',
   flexDirection: `${props.col ? 'column' : 'row'}${props.rev ? '-reverse' : ''}`,
   flexWrap: props.wrap && 'wrap',
 
-  borderRadius: props.rounded ? props.theme.corners : props.rad ? props.rad : props.circle ? 99999 : props.glass ? 6 : 0,
+  borderRadius: (props.rounded || props.glass) ? props.theme.corners : props.rad ? props.rad : props.circle ? 99999 : 0,
   width: props.full ? '100%' : props.w && props.w,
   height: props.full ? '100%' : props.h && props.h,
   minWidth: props.minW && props.minW,
@@ -51,6 +51,7 @@ const _Div = styled.div(props => ({
   transform: props.scale ? `scale(${props.scale})` : props.elevation && `translateZ(${props.elevation}px)`,
   // border: props.glass && '1px solid #0000',
   backdropFilter: props.blur && `blur(${props.blur}px)`,
+  cursor: props.onClick && 'pointer',
 
   '&:hover': {
     // background: props.glass && '#20283157',

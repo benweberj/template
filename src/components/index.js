@@ -1,9 +1,19 @@
+
+// import BusinessCard from './BusinessCard'
 import Button from './Button'
-import Text from './Text'
 import Div from './Div'
+import Img from './Img'
+import SocialMedia from './SocialMedia'
+import Text from './Text'
+import ThemeToggler from './ThemeToggler'
+
 
 export {
+  // BusinessCard,
   Button,
   Div,
-  Text
+  Img,
+  SocialMedia,
+  Text,
+  ThemeToggler
 }

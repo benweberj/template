@@ -7,14 +7,14 @@ export const GlobalStyles = createGlobalStyle`
     background: ${props => props.theme.base};
     transition: background .5s ease;
     height: 100%;
-    font-size: 15px;
   }
 
   * {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Exo', sans-serif;
     box-sizing: border-box;
+    font-size: 15px;
   }
 
   .parallax-effect { transform-style: preserve-3d }
@@ -32,16 +32,16 @@ export const GlobalStyles = createGlobalStyle`
   }
 `
 
-const darkColor = '#111111'
-const lightColor = '#ffffff'
+const darkColor = '#222733'
+const lightColor = '#e0d6b7'
 
 const baseStyles = {
   primary: '#60b389',
   accent: '#97cfb3',
 
-  light: 300,
+  light: 100,
   regular: 400,
-  bold: 600,
+  bold: 500,
   corners: 10,
   cornersSm: 4,
 }

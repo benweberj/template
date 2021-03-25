@@ -13,6 +13,8 @@ const Toggler = styled.button(props => ({
   display: 'block',
   margin: 'auto',
 
+  marginTop: 15, // hard-coding right here since toggler will likely always be at the top
+
   '&:hover': {
     opacity: 1,
     padding: !props.used && '.5rem 2.5rem',

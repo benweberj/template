@@ -10,7 +10,7 @@ const Button_ = styled.button(props => ({
   marginTop: props.mt ? props.mt : props.my && props.my,
   marginBottom: props.mb ? props.mb : props.my && props.my,
 
-  padding: props.p ? props.p : '5px 20px',
+  padding: props.p ? props.p : '5px 25px',
   paddingLeft: props.pl ? props.pl : props.px && props.px,
   paddingRight: props.pr ? props.pr : props.px && props.px,
   paddingTop: props.pt ? props.pt : props.py && props.py,
@@ -20,18 +20,18 @@ const Button_ = styled.button(props => ({
   height: props.h && props.h,
   display: props.block && 'block',
   
-  transition: 'all .5s ease',
+  transition: 'all .25s ease',
   cursor: 'pointer',
   position: 'relative',
-  // background: props.theme.primary,
-  background: 'none',
-  color: props.theme[props.inverse ? 'base' : 'complement'],
+  // background: props.noborder ? 'none' : props.theme.complement,
+  // color: props.theme[props.inverse ? 'base' : 'complement'],
+  color: props.theme.complement,
   outline: 0,
-  // border: `1px solid ${props.theme[props.inverse ? 'base' : 'complement']}`,
-  border: 'none',
+  background: props.selected ? props.theme.complement : 'none',
+  border: props.noborder ? 'none' : `1px solid ${props.theme[props.inverse ? 'base' : 'complement']}`,
   fontSize: props.size && props.size,
   borderRadius: props.rad || 9999,
-  fontWeight: props.theme.light,
+  fontWeight: props.theme.regular,
   opacity: props.silent && '.3',
   overflow: 'hidden',
   boxSizing: 'border-box',
@@ -43,11 +43,14 @@ const Button_ = styled.button(props => ({
   },
   '& p': { transition: 'all .25s ease' },
 
-  '&:hover': {
+  '&:hover': props.noborder ? {
     opacity: 1,
     '&:after': { transform: 'translateY(100%) scale(.7)' },
     '&:before': { transform: 'scaleY(1)' },
     '& p': { transform: 'translateY(5px)', opacity: .5 }
+  } : {
+    background: props.theme.complement,
+    color: props.theme.base,
   }
 }))
 

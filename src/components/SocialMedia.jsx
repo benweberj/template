@@ -7,7 +7,7 @@ const Container = styled.div`
   justify-content: center;
 `
 const Site = styled.a`
-  background-image: url('${props => require('../img/social/' + props.name + '.png')}');
+  background-image: url('${props => require('../img/social/' + props.name + '.png').default}');
   filter: ${props => props.theme.mode === 'light' && 'invert(1)'};
   background-size: cover;
   width: 30px;

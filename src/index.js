@@ -5,7 +5,8 @@ import { ThemeProvider as MUIThemeProvider } from '@material-ui/core/styles'
 import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 import { theme as baseTheme, GlobalStyles } from './styles'
 
-import { Div } from './components/index'
+import Sketches from './Sketches'
+import { Div, AnimatedSVG } from './components/index'
 
 class App extends React.Component {
   state = {
@@ -16,15 +17,19 @@ class App extends React.Component {
 
   render() {
     const { theme } = this.state
-
     return (
       <MUIThemeProvider theme={theme}> 
         <StyledThemeProvider theme={theme}>
           <GlobalStyles />
 
           {/* SHIT GOES HERE */}
-          <Div w={100} h={200} bg='red' />
-          <div style={{ width: 100, height: 100, background: theme.complement }} onClick={this.toggleMode} />
+
+          <Sketches />
+          {/* <AnimatedSVG on={this.state.on} />
+          <button onClick={_ => this.setState({ on: !this.state.on })}>toggle SVG</button>
+
+          <AnimatedSVG on={this.state.on2} />
+          <button onClick={_ => this.setState({ on2: !this.state.on2 })}>toggle SVG</button> */}
           {/* END OF SHIT */}
 
         </StyledThemeProvider>

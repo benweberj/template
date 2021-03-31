@@ -54,8 +54,8 @@ const _Div = styled.div(props => ({
   cursor: props.onClick && 'pointer',
 
   '&:hover': {
-    // background: props.glass && '#20283157',
-    backdropFilter: props.glass && 'blur(4px)',
+    background: props.glass && '#20283157',
+    // backdropFilter: props.glass && 'blur(4px)',
     // borderColor: '#5b9bea',
   },
 }))

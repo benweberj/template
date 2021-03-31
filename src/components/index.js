@@ -1,5 +1,6 @@
 
 // import BusinessCard from './BusinessCard'
+import AnimatedSVG from './AnimatedSVG'
 import Button from './Button'
 import Div from './Div'
 import Img from './Img'
@@ -10,6 +11,7 @@ import ThemeToggler from './ThemeToggler'
 
 export {
   // BusinessCard,
+  AnimatedSVG,
   Button,
   Div,
   Img,

@@ -5,6 +5,8 @@ export const GlobalStyles = createGlobalStyle`
   
   body {
     background: ${props => props.theme.base};
+    background: radial-gradient(#0006, #0006), url('https://wallpaper.dog/large/10850082.jpg');
+    backgrounSize: cover;
     transition: background .5s ease;
     height: 100%;
   }
